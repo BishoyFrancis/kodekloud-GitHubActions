@@ -6,13 +6,19 @@ jobs:
     first_job:
         runs-on: ubuntu-latest
         steps:
-            - name: "Checkout Repo"
-              uses: actions/checkout@v4
+            # - name: "Checkout Repo"
+            #   uses: actions/checkout@v4
+
             - name: "Welcome Message"
-              run : echo "Welcome From A UBUNTU LATEST VM , THIS IS MY FIRST WORKFLOW"
+              run : |
+                echo "Welcome From A UBUNTU LATEST VM , THIS IS MY FIRST WORKFLOW"
+                ls -al
+                cat README.md
 
-            - name: "list files"
-              run: ls -al
+            - name: "ASCII GENERATOR"
+              run: cowsay -f dragon "run for cover , I am a dragon .... Rawr" >> dragon.txt
+            # - name: "list files"
+            #   run: ls -al
 
-            - name: "Read File"
-              run: cat README.md
+            # - name: "Read File"
+            #   run: cat README.md
